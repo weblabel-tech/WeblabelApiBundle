@@ -1,3 +1,7 @@
+WeblabelApiBundle
+============
+[![Build Status](https://travis-ci.org/weblabel-tech/WeblabelApiBundle.svg?branch=master)](https://travis-ci.org/weblabel-tech/WeblabelApiBundle)
+
 Installation
 ============
 
