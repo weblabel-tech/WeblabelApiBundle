@@ -1,0 +1,51 @@
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services
+        https://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="weblabel_api.decoder_resolver.generic" class="Weblabel\ApiBundle\Decoder\DecoderResolver">
+            <argument type="tagged_iterator" tag="weblabel_api.decoder"/>
+        </service>
+        <service id="weblabel_api.decoder_resolver" alias="weblabel_api.decoder_resolver.generic" public="true"/>
+        <service id="Weblabel\ApiBundle\Decoder\DecoderResolverInterface" alias="weblabel_api.decoder_resolver"/>
+
+        <service id="weblabel_api.decoder.json" class="Weblabel\ApiBundle\Decoder\JsonDecoder">
+            <tag name="weblabel_api.decoder"/>
+        </service>
+
+        <service id="weblabel_api.request_body_listener" class="Weblabel\ApiBundle\EventListener\RequestBodyListener">
+            <tag name="kernel.event_listener" event="kernel.request" method="onKernelRequest"/>
+            <argument type="service" id="weblabel_api.decoder_resolver"/>
+        </service>
+
+        <service id="weblabel_api.normalizer.form.error.generic" class="Weblabel\ApiBundle\Normalizer\Form\FormErrorNormalizer"/>
+        <service id="weblabel_api.normalizer.form.error" alias="weblabel_api.normalizer.form.error.generic" public="true"/>
+        <service id="Weblabel\ApiBundle\Normalizer\Form\FormErrorNormalizerInterface" alias="weblabel_api.normalizer.form.error"/>
+
+
+        <service id="weblabel_api.transformer.exception_resolver.generic" class="Weblabel\ApiBundle\Transformer\ExceptionTransformerResolver">
+            <argument type="tagged_iterator" tag="weblabel_api.transformer.exception"/>
+        </service>
+        <service id="weblabel_api.transformer.exception_resolver" alias="weblabel_api.transformer.exception_resolver.generic" public="true"/>
+        <service id="Weblabel\ApiBundle\Transformer\ExceptionTransformerResolverInterface" alias="weblabel_api.transformer.exception_resolver"/>
+
+        <service id="weblabel_api.transformer.exception.validation" class="Weblabel\ApiBundle\Transformer\ExceptionTransformer\ValidationExceptionTransformer">
+            <tag name="weblabel_api.transformer.exception"/>
+        </service>
+
+        <service id="weblabel_api.transformer.exception.http" class="Weblabel\ApiBundle\Transformer\ExceptionTransformer\HttpExceptionTransformer">
+            <tag name="weblabel_api.transformer.exception"/>
+        </service>
+
+        <service id="weblabel_api.transformer.exception.generic" class="Weblabel\ApiBundle\Transformer\ExceptionTransformer\GenericExceptionTransformer">
+            <tag name="weblabel_api.transformer.exception"/>
+            <argument>%kernel.debug%</argument>
+        </service>
+
+        <service id="weblabel_api.exception_listener" class="Weblabel\ApiBundle\EventListener\ExceptionListener">
+            <tag name="kernel.event_listener" event="kernel.exception" method="onKernelException"/>
+            <argument type="service" id="weblabel_api.transformer.exception_resolver"/>
+        </service>
+    </services>
+</container>

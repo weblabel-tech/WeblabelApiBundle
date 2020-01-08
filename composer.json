@@ -1,0 +1,33 @@
+{
+    "name": "weblabel/api-bundle",
+    "description": "This bundle provides few functionalities that helps you quickly develop REST API based on Symfony framework",
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Adam Kowalski",
+            "email": "adam.kowalski@weblabel.pl"
+        }
+    ],
+    "require": {
+        "php": "^7.2.5",
+        "symfony/framework-bundle": "^5.0",
+        "symfony/form": "^5.0",
+        "symfony/validator": "^5.0"
+    },
+    "require-dev": {
+        "symfony/phpunit-bridge": "^5.0",
+        "phpstan/phpstan": "^0.12.3",
+        "phpstan/phpstan-symfony": "^0.12.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Weblabel\\ApiBundle\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Weblabel\\ApiBundle\\Tests\\": "tests/"
+        }
+    }
+}

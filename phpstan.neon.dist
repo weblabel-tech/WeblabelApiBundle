@@ -1,0 +1,9 @@
+includes:
+    - vendor/phpstan/phpstan-symfony/extension.neon
+parameters:
+    level: max
+    inferPrivatePropertyTypeFromConstructor: true
+    checkMissingIterableValueType: false
+    checkGenericClassInNonGenericObjectType: false
+    paths:
+        - ./src/
