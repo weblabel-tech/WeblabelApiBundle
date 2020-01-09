@@ -9,10 +9,10 @@ interface ExceptionTransformerInterface
     /**
      * Transforms an exception object into exception wrapper object.
      */
-    public function transform(\Throwable $throwable) : ExceptionWrapper;
+    public function transform(\Throwable $throwable): ExceptionWrapper;
 
     /**
      * Checks if given exception is supported.
      */
-    public function supports(\Throwable $throwable) : bool;
+    public function supports(\Throwable $throwable): bool;
 }

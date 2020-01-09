@@ -12,7 +12,7 @@ final class FormErrorNormalizer implements FormErrorNormalizerInterface
     /**
      * {@inheritdoc}
      */
-    public function normalize(FormInterface $form) : array
+    public function normalize(FormInterface $form): array
     {
         $errors = [];
         /** @var FormError $error */

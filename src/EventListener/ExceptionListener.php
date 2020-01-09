@@ -18,7 +18,7 @@ final class ExceptionListener
         $this->exceptionTransformerResolver = $exceptionTransformerResolver;
     }
 
-    public function onKernelException(ExceptionEvent $exceptionEvent) : void
+    public function onKernelException(ExceptionEvent $exceptionEvent): void
     {
         $throwable = $exceptionEvent->getThrowable();
         $wrapper = $this->exceptionTransformerResolver->resolve($throwable)->transform($throwable);

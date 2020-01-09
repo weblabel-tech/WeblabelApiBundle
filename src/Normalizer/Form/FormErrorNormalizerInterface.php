@@ -11,5 +11,5 @@ interface FormErrorNormalizerInterface
     /**
      * Normalizes form error objects into a set of errors.
      */
-    public function normalize(FormInterface $form) : array;
+    public function normalize(FormInterface $form): array;
 }

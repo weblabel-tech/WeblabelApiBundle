@@ -13,10 +13,10 @@ interface DecoderInterface
      *
      * @throws InvalidPayloadException
      */
-    public function decode(string $payload) : array;
+    public function decode(string $payload): array;
 
     /**
      * Checks if given format is supported.
      */
-    public function supports(string $format) : bool;
+    public function supports(string $format): bool;
 }

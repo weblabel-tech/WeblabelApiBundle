@@ -13,5 +13,5 @@ interface DecoderResolverInterface
      *
      * @throws UnsupportedFormatException
      */
-    public function resolve(string $format) : DecoderInterface;
+    public function resolve(string $format): DecoderInterface;
 }

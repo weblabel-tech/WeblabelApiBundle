@@ -20,7 +20,7 @@ class ValidationException extends BadRequestHttpException
     /**
      * Gets errors.
      */
-    public function getErrors() : array
+    public function getErrors(): array
     {
         return $this->errors;
     }

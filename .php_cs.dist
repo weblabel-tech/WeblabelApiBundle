@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-if (!file_exists(__DIR__.'/src')) {
+if (!\file_exists(__DIR__.'/src')) {
     exit(0);
 }
 
@@ -19,11 +19,13 @@ return PhpCsFixer\Config::create()
         'strict_param' => true,
         'ordered_imports' => true,
         'php_unit_method_casing' => ['case' => 'snake_case'],
-        'return_type_declaration' => ['space_before' => 'one'],
         'class_attributes_separation' => ['elements' => ['const', 'property', 'method']],
         'declare_strict_types' => true,
         'blank_line_after_opening_tag' => true,
         'no_unused_imports' => true,
+        'global_namespace_import' => ['import_classes' => false, 'import_constants' => false, 'import_functions' => false],
+        'native_function_invocation' => true,
+        'native_constant_invocation' => true,
     ])
     ->setRiskyAllowed(true)
     ->setFinder(

@@ -15,7 +15,7 @@ final class HttpExceptionTransformer implements ExceptionTransformerInterface
      *
      * @param HttpExceptionInterface $throwable
      */
-    public function transform(\Throwable $throwable) : ExceptionWrapper
+    public function transform(\Throwable $throwable): ExceptionWrapper
     {
         return new ExceptionWrapper($throwable->getStatusCode(), $throwable->getMessage());
     }
@@ -23,7 +23,7 @@ final class HttpExceptionTransformer implements ExceptionTransformerInterface
     /**
      * {@inheritdoc}
      */
-    public function supports(\Throwable $throwable) : bool
+    public function supports(\Throwable $throwable): bool
     {
         return $throwable instanceof HttpExceptionInterface;
     }

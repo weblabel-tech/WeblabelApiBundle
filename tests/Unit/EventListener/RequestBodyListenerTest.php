@@ -112,7 +112,7 @@ class RequestBodyListenerTest extends TestCase
         $requestBodyListener->onKernelRequest($requestEvent);
     }
 
-    public function payloadAwareMethodProvider() : array
+    public function payloadAwareMethodProvider(): array
     {
         return [
             ['POST'],
@@ -122,7 +122,7 @@ class RequestBodyListenerTest extends TestCase
         ];
     }
 
-    public function payloadLessMethodProvider() : array
+    public function payloadLessMethodProvider(): array
     {
         return [
             ['GET'],
@@ -139,7 +139,7 @@ class RequestBodyListenerTest extends TestCase
         ];
     }
 
-    private function getRequest(string $method, ?string $content = null, string $contentType = 'application/json') : Request
+    private function getRequest(string $method, ?string $content = null, string $contentType = 'application/json'): Request
     {
         return Request::create('https://example.com', $method, [], [], [], ['CONTENT_TYPE' => $contentType], $content);
     }

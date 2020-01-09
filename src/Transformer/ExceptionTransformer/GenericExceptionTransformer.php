@@ -22,7 +22,7 @@ final class GenericExceptionTransformer implements ExceptionTransformerInterface
     /**
      * {@inheritdoc}
      */
-    public function transform(\Throwable $throwable) : ExceptionWrapper
+    public function transform(\Throwable $throwable): ExceptionWrapper
     {
         return new ExceptionWrapper(
             self::DEFAULT_STATUS_CODE,
@@ -35,7 +35,7 @@ final class GenericExceptionTransformer implements ExceptionTransformerInterface
     /**
      * {@inheritdoc}
      */
-    public function supports(\Throwable $throwable) : bool
+    public function supports(\Throwable $throwable): bool
     {
         return true;
     }
@@ -43,7 +43,7 @@ final class GenericExceptionTransformer implements ExceptionTransformerInterface
     /**
      * Returns exception message if debug is enabled or empty string otherwise.
      */
-    private function getTitle(\Throwable $throwable) : string
+    private function getTitle(\Throwable $throwable): string
     {
         if (false === $this->debug) {
             return '';
@@ -55,7 +55,7 @@ final class GenericExceptionTransformer implements ExceptionTransformerInterface
     /**
      * Returns exception details if debug is enabled.
      */
-    private function getAttributes(\Throwable $throwable) : array
+    private function getAttributes(\Throwable $throwable): array
     {
         if (false === $this->debug) {
             return [];

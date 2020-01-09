@@ -27,7 +27,7 @@ class WeblabelApiTestKernel extends Kernel
         $loader->load(__DIR__.'/config/services.test.xml');
     }
 
-    public function getProjectDir() : string
+    public function getProjectDir(): string
     {
         return __DIR__;
     }

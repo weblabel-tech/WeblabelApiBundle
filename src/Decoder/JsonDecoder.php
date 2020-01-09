@@ -15,19 +15,19 @@ final class JsonDecoder implements DecoderInterface
     /**
      * {@inheritdoc}
      */
-    public function decode(string $payload) : array
+    public function decode(string $payload): array
     {
         try {
-            return json_decode($payload, true, self::RECURSION_DEPTH, \JSON_THROW_ON_ERROR);
+            return \json_decode($payload, true, self::RECURSION_DEPTH, \JSON_THROW_ON_ERROR);
         } catch (\JsonException $e) {
-            throw new InvalidPayloadException(sprintf('Cannot decode payload. Error: %s', $e->getMessage()));
+            throw new InvalidPayloadException(\sprintf('Cannot decode payload. Error: %s', $e->getMessage()));
         }
     }
 
     /**
      * {@inheritdoc}
      */
-    public function supports(string $format) : bool
+    public function supports(string $format): bool
     {
         return self::FORMAT_JSON === $format;
     }

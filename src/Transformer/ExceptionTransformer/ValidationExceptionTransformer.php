@@ -15,7 +15,7 @@ final class ValidationExceptionTransformer implements ExceptionTransformerInterf
      *
      * @param ValidationException $throwable
      */
-    public function transform(\Throwable $throwable) : ExceptionWrapper
+    public function transform(\Throwable $throwable): ExceptionWrapper
     {
         return new ExceptionWrapper(
             $throwable->getStatusCode(),
@@ -30,7 +30,7 @@ final class ValidationExceptionTransformer implements ExceptionTransformerInterf
     /**
      * {@inheritdoc}
      */
-    public function supports(\Throwable $throwable) : bool
+    public function supports(\Throwable $throwable): bool
     {
         return $throwable instanceof ValidationException;
     }

@@ -13,5 +13,5 @@ interface ExceptionTransformerResolverInterface
      *
      * @throws LogicException
      */
-    public function resolve(\Throwable $throwable) : ExceptionTransformerInterface;
+    public function resolve(\Throwable $throwable): ExceptionTransformerInterface;
 }

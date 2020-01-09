@@ -40,7 +40,7 @@ class ValidationExceptionTransformerTest extends TestCase
         );
     }
 
-    protected function setUp() : void
+    protected function setUp(): void
     {
         $this->transformer = new ValidationExceptionTransformer();
     }

@@ -74,7 +74,7 @@ class HttpExceptionTransformerTest extends TestCase
         ];
     }
 
-    protected function setUp() : void
+    protected function setUp(): void
     {
         $this->transformer = new HttpExceptionTransformer();
     }

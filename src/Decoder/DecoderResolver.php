@@ -24,7 +24,7 @@ final class DecoderResolver implements DecoderResolverInterface
     /**
      * {@inheritdoc}
      */
-    public function resolve(string $format) : DecoderInterface
+    public function resolve(string $format): DecoderInterface
     {
         foreach ($this->decoders as $decoder) {
             if ($decoder->supports($format)) {
@@ -38,7 +38,7 @@ final class DecoderResolver implements DecoderResolverInterface
     /**
      * Adds new decoder.
      */
-    public function addDecoder(DecoderInterface $decoder) : void
+    public function addDecoder(DecoderInterface $decoder): void
     {
         $this->decoders[] = $decoder;
     }

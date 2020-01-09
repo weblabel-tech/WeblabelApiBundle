@@ -35,7 +35,7 @@ final class RequestBodyListener
      * @throws UnsupportedMediaTypeHttpException
      * @throws BadRequestHttpException
      */
-    public function onKernelRequest(RequestEvent $requestEvent) : void
+    public function onKernelRequest(RequestEvent $requestEvent): void
     {
         $request = $requestEvent->getRequest();
         if ($this->isPayloadlessMethod($request->getMethod())) {
@@ -54,7 +54,7 @@ final class RequestBodyListener
     /**
      * Checks if given HTTP method supports payload.
      */
-    private function isPayloadlessMethod(string $method) : bool
+    private function isPayloadlessMethod(string $method): bool
     {
         return \in_array($method, self::$methodsWithoutPayload, true);
     }
@@ -62,7 +62,7 @@ final class RequestBodyListener
     /**
      * Checks if request contains payload.
      */
-    private function hasPayload(string $payload) : bool
+    private function hasPayload(string $payload): bool
     {
         return !empty($payload);
     }
@@ -73,7 +73,7 @@ final class RequestBodyListener
      * @throws UnsupportedMediaTypeHttpException
      * @throws BadRequestHttpException
      */
-    private function decodePayload(Request $request) : array
+    private function decodePayload(Request $request): array
     {
         try {
             $data = $this->decoderResolver->resolve((string) $request->getContentType())->decode($request->getContent());

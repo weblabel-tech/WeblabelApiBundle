@@ -39,7 +39,7 @@ class JsonDecoderTest extends TestCase
         $this->jsonDecoder->decode('{"foo":bar}');
     }
 
-    public function nonJsonFormatDataProvider() : array
+    public function nonJsonFormatDataProvider(): array
     {
         return [
             ['html'],
@@ -49,7 +49,7 @@ class JsonDecoderTest extends TestCase
         ];
     }
 
-    protected function setUp() : void
+    protected function setUp(): void
     {
         $this->jsonDecoder = new JsonDecoder();
     }

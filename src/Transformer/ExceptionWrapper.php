@@ -33,9 +33,9 @@ final class ExceptionWrapper
     /**
      * Gets array representation of injected attributes.
      */
-    public function toArray() : array
+    public function toArray(): array
     {
-        return array_merge(
+        return \array_merge(
             [
                 'status' => $this->statusCode,
                 'title' => $this->title,
@@ -48,7 +48,7 @@ final class ExceptionWrapper
     /**
      * Gets status code.
      */
-    public function getStatusCode() : int
+    public function getStatusCode(): int
     {
         return $this->statusCode;
     }
