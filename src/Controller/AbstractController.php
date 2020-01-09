@@ -7,6 +7,7 @@ namespace Weblabel\ApiBundle\Controller;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Weblabel\ApiBundle\Exception\ValidationException;
 use Weblabel\ApiBundle\Normalizer\Form\FormErrorNormalizerInterface;
 
@@ -20,7 +21,7 @@ abstract class AbstractController
         $this->formErrorNormalizer = $formErrorNormalizer;
     }
 
-    protected function json(array $data, int $statusCode, array $headers = []): JsonResponse
+    protected function json(array $data, int $statusCode = Response::HTTP_OK, array $headers = []): JsonResponse
     {
         return new JsonResponse(['data' => $data], $statusCode, $headers);
     }
