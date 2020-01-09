@@ -6,6 +6,7 @@ namespace Weblabel\ApiBundle\Normalizer\Form;
 
 use Symfony\Component\Form\FormError;
 use Symfony\Component\Form\FormInterface;
+use Symfony\Component\Validator\ConstraintViolation;
 
 final class FormErrorNormalizer implements FormErrorNormalizerInterface
 {
@@ -17,9 +18,11 @@ final class FormErrorNormalizer implements FormErrorNormalizerInterface
         $errors = [];
         /** @var FormError $error */
         foreach ($form->getErrors() as $error) {
+            /** @var ConstraintViolation $cause */
+            $cause = $error->getCause();
             $errors[] = [
                 'message' => $error->getMessage(),
-                'code' => $error->getCause()->getConstraint()->payload['errorCode'],
+                'code' => $cause->getConstraint()->payload['errorCode'],
             ];
         }
 
