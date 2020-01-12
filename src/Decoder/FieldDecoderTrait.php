@@ -12,6 +12,10 @@ trait FieldDecoderTrait
     public function decodeFields(array $data, array $fields): array
     {
         foreach ($fields as $field) {
+            if (!isset($data[$field])) {
+                continue;
+            }
+
             $data[$field] = $this->decoder->decode($data[$field]);
         }
 
