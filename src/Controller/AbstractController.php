@@ -21,7 +21,10 @@ abstract class AbstractController
         $this->formErrorNormalizer = $formErrorNormalizer;
     }
 
-    protected function json(array $data, int $statusCode = Response::HTTP_OK, array $headers = []): JsonResponse
+    /**
+     * @param array|object $data
+     */
+    protected function json($data, int $statusCode = Response::HTTP_OK, array $headers = []): JsonResponse
     {
         return new JsonResponse(['data' => $data], $statusCode, $headers);
     }
