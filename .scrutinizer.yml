@@ -1,8 +1,9 @@
 build:
     nodes:
-        environment:
-            php:
-                version: 7.3
+        tests:
+            environment:
+                php:
+                    version: 7.3
     tests:
         override:
             - 'vendor/bin/simple-phpunit'
