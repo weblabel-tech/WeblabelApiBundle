@@ -1,4 +1,7 @@
 build:
     tests:
+        environment:
+            php:
+                version: 7.3
         override:
             - 'vendor/bin/simple-phpunit'
