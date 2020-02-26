@@ -1,6 +1,9 @@
 WeblabelApiBundle
 ============
+
 [![Build Status](https://travis-ci.org/weblabel-tech/WeblabelApiBundle.svg?branch=master)](https://travis-ci.org/weblabel-tech/WeblabelApiBundle)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/weblabel-tech/WeblabelApiBundle/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/weblabel-tech/WeblabelApiBundle/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/weblabel-tech/WeblabelApiBundle/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/weblabel-tech/WeblabelApiBundle/?branch=master)
 
 Installation
 ============
