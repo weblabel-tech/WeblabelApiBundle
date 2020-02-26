@@ -40,7 +40,6 @@ install:
 
 script:
     - composer validate --strict --no-check-lock
-    - ./vendor/bin/php-cs-fixer fix --dry-run
     - ./vendor/bin/phpstan analyse
     - ./vendor/bin/simple-phpunit $PHPUNIT_FLAGS
 
