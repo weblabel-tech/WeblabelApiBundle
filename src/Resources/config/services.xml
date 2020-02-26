@@ -4,19 +4,9 @@
         https://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <services>
-        <service id="weblabel_api.decoder_resolver.generic" class="Weblabel\ApiBundle\Decoder\DecoderResolver">
-            <argument type="tagged_iterator" tag="weblabel_api.decoder"/>
-        </service>
-        <service id="weblabel_api.decoder_resolver" alias="weblabel_api.decoder_resolver.generic" public="true"/>
-        <service id="Weblabel\ApiBundle\Decoder\DecoderResolverInterface" alias="weblabel_api.decoder_resolver"/>
-
-        <service id="weblabel_api.decoder.json" class="Weblabel\ApiBundle\Decoder\JsonDecoder">
-            <tag name="weblabel_api.decoder"/>
-        </service>
-
         <service id="weblabel_api.request_body_listener" class="Weblabel\ApiBundle\EventListener\RequestBodyListener">
             <tag name="kernel.event_listener" event="kernel.request" method="onKernelRequest"/>
-            <argument type="service" id="weblabel_api.decoder_resolver"/>
+            <argument type="service" id="weblabel_data_transformer.decoder_resolver"/>
         </service>
 
         <service id="weblabel_api.normalizer.form.error.generic" class="Weblabel\ApiBundle\Normalizer\Form\FormErrorNormalizer"/>

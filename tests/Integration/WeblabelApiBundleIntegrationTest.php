@@ -5,8 +5,6 @@ declare(strict_types=1);
 namespace Weblabel\ApiBundle\Tests\Integration;
 
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
-use Weblabel\ApiBundle\Decoder\DecoderResolverInterface;
-use Weblabel\ApiBundle\Decoder\JsonDecoder;
 use Weblabel\ApiBundle\EventListener\ExceptionListener;
 use Weblabel\ApiBundle\EventListener\RequestBodyListener;
 use Weblabel\ApiBundle\Normalizer\Form\FormErrorNormalizerInterface;
@@ -22,9 +20,6 @@ class WeblabelApiBundleIntegrationTest extends KernelTestCase
         $kernel = self::bootKernel();
 
         $container = $kernel->getContainer();
-
-        self::assertInstanceOf(DecoderResolverInterface::class, $container->get('weblabel_api.decoder_resolver'));
-        self::assertInstanceOf(JsonDecoder::class, $container->get('test.weblabel_api.decoder.json'));
 
         self::assertInstanceOf(RequestBodyListener::class, $container->get('test.weblabel_api.request_body_listener'));
 

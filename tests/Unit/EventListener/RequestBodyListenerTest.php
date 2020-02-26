@@ -10,11 +10,11 @@ use Symfony\Component\HttpKernel\Event\RequestEvent;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 use Symfony\Component\HttpKernel\Exception\UnsupportedMediaTypeHttpException;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
-use Weblabel\ApiBundle\Decoder\DecoderInterface;
-use Weblabel\ApiBundle\Decoder\DecoderResolverInterface;
 use Weblabel\ApiBundle\EventListener\RequestBodyListener;
-use Weblabel\ApiBundle\Exception\InvalidPayloadException;
-use Weblabel\ApiBundle\Exception\UnsupportedFormatException;
+use Weblabel\DataTransformer\DecoderInterface;
+use Weblabel\DataTransformer\DecoderResolverInterface;
+use Weblabel\DataTransformer\Exception\InvalidPayloadException;
+use Weblabel\DataTransformer\Exception\UnsupportedFormatException;
 
 class RequestBodyListenerTest extends TestCase
 {

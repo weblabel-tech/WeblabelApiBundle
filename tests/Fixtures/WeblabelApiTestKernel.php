@@ -7,6 +7,7 @@ namespace Weblabel\ApiBundle\Tests\Fixtures;
 use Symfony\Component\Config\Loader\LoaderInterface;
 use Symfony\Component\HttpKernel\Kernel;
 use Weblabel\ApiBundle\WeblabelApiBundle;
+use Weblabel\DataTransformerBundle\WeblabelDataTransformerBundle;
 
 class WeblabelApiTestKernel extends Kernel
 {
@@ -18,6 +19,7 @@ class WeblabelApiTestKernel extends Kernel
     public function registerBundles()
     {
         return [
+            new WeblabelDataTransformerBundle(),
             new WeblabelApiBundle(),
         ];
     }

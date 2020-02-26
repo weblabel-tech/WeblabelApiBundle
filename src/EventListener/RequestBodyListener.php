@@ -8,9 +8,9 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 use Symfony\Component\HttpKernel\Exception\UnsupportedMediaTypeHttpException;
-use Weblabel\ApiBundle\Decoder\DecoderResolverInterface;
-use Weblabel\ApiBundle\Exception\InvalidPayloadException;
-use Weblabel\ApiBundle\Exception\UnsupportedFormatException;
+use Weblabel\DataTransformer\DecoderResolverInterface;
+use Weblabel\DataTransformer\Exception\InvalidPayloadException;
+use Weblabel\DataTransformer\Exception\UnsupportedFormatException;
 
 final class RequestBodyListener
 {

@@ -5,7 +5,6 @@
 
     <services>
         <defaults public="true"/>
-        <service id="test.weblabel_api.decoder.json" alias="weblabel_api.decoder.json"/>
         <service id="test.weblabel_api.request_body_listener" alias="weblabel_api.request_body_listener"/>
         <service id="test.weblabel_api.transformer.exception.validation" alias="weblabel_api.transformer.exception.validation"/>
         <service id="test.weblabel_api.transformer.exception.http" alias="weblabel_api.transformer.exception.http"/>
