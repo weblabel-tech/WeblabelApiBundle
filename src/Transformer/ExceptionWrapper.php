@@ -11,16 +11,16 @@ final class ExceptionWrapper
     public const DEFAULT_TYPE = 'about:blank';
 
     /** @var int */
-    private $statusCode;
+    private int $statusCode;
 
     /** @var string */
-    private $title;
+    private string $title;
 
     /** @var string */
-    private $type;
+    private string $type;
 
     /** @var array */
-    private $attributes;
+    private array $attributes;
 
     public function __construct(int $status, string $title = self::DEFAULT_MESSAGE, string $type = self::DEFAULT_TYPE, array $attributes = [])
     {

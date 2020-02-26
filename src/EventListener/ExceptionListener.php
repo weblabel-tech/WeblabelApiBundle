@@ -11,7 +11,7 @@ use Weblabel\ApiBundle\Transformer\ExceptionTransformerResolverInterface;
 final class ExceptionListener
 {
     /** @var ExceptionTransformerResolverInterface */
-    private $exceptionTransformerResolver;
+    private ExceptionTransformerResolverInterface $exceptionTransformerResolver;
 
     public function __construct(ExceptionTransformerResolverInterface $exceptionTransformerResolver)
     {

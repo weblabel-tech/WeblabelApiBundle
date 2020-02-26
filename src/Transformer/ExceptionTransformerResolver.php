@@ -8,8 +8,8 @@ use Weblabel\ApiBundle\Exception\LogicException;
 
 final class ExceptionTransformerResolver implements ExceptionTransformerResolverInterface
 {
-    /** @var iterable|ExceptionTransformerInterface[] */
-    private $transformers = [];
+    /** @var ExceptionTransformerInterface[] */
+    private array $transformers = [];
 
     /**
      * @param iterable|ExceptionTransformerInterface[] $transformers

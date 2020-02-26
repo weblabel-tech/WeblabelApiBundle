@@ -14,7 +14,7 @@ use Weblabel\ApiBundle\Normalizer\Form\FormErrorNormalizerInterface;
 abstract class AbstractController
 {
     /** @var FormErrorNormalizerInterface */
-    private $formErrorNormalizer;
+    private FormErrorNormalizerInterface $formErrorNormalizer;
 
     public function setFormErrorNormalizer(FormErrorNormalizerInterface $formErrorNormalizer): void
     {
