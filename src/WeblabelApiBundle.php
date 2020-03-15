@@ -18,7 +18,7 @@ class WeblabelApiBundle extends Bundle
      */
     public function build(ContainerBuilder $container)
     {
-        $container->registerForAutoconfiguration(AbstractController::class)->addTag('weblabel_api.controller_services');
+        $container->registerForAutoconfiguration(AbstractController::class)->addTag('weblabel_api.controller_services')->addTag('controller.service_arguments');
         $container->addCompilerPass(new ControllerServicesCompilerPass());
     }
 }
