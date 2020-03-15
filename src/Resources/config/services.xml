@@ -13,7 +13,6 @@
         <service id="weblabel_api.normalizer.form.error" alias="weblabel_api.normalizer.form.error.generic" public="true"/>
         <service id="Weblabel\ApiBundle\Normalizer\Form\FormErrorNormalizerInterface" alias="weblabel_api.normalizer.form.error"/>
 
-
         <service id="weblabel_api.transformer.exception_resolver.generic" class="Weblabel\ApiBundle\Transformer\ExceptionTransformerResolver">
             <argument type="tagged_iterator" tag="weblabel_api.transformer.exception"/>
         </service>
@@ -36,6 +35,10 @@
         <service id="weblabel_api.exception_listener" class="Weblabel\ApiBundle\EventListener\ExceptionListener">
             <tag name="kernel.event_listener" event="kernel.exception" method="onKernelException"/>
             <argument type="service" id="weblabel_api.transformer.exception_resolver"/>
+        </service>
+
+        <service id="weblabel_api.security.authorization_checker" class="Weblabel\ApiBundle\Security\AuthorizationChecker">
+            <argument type="service" id="Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface"/>
         </service>
     </services>
 </container>

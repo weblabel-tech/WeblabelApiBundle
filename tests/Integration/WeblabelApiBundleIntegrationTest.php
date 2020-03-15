@@ -8,6 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Weblabel\ApiBundle\EventListener\ExceptionListener;
 use Weblabel\ApiBundle\EventListener\RequestBodyListener;
 use Weblabel\ApiBundle\Normalizer\Form\FormErrorNormalizerInterface;
+use Weblabel\ApiBundle\Security\AuthorizationChecker;
 use Weblabel\ApiBundle\Transformer\ExceptionTransformer\GenericExceptionTransformer;
 use Weblabel\ApiBundle\Transformer\ExceptionTransformer\HttpExceptionTransformer;
 use Weblabel\ApiBundle\Transformer\ExceptionTransformer\ValidationExceptionTransformer;
@@ -31,5 +32,7 @@ class WeblabelApiBundleIntegrationTest extends KernelTestCase
         self::assertInstanceOf(GenericExceptionTransformer::class, $container->get('test.weblabel_api.transformer.exception.generic'));
 
         self::assertInstanceOf(ExceptionListener::class, $container->get('test.weblabel_api.exception_listener'));
+
+        self::assertInstanceOf(AuthorizationChecker::class, $container->get('test.weblabel_api.security.authorization_checker'));
     }
 }

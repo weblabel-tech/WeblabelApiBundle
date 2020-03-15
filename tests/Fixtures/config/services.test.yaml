@@ -1,0 +1,26 @@
+services:
+    _defaults:
+        public: true
+        autoconfigure: true
+        autowire: true
+
+    test.weblabel_api.request_body_listener:
+        alias: weblabel_api.request_body_listener
+
+    test.weblabel_api.transformer.exception.validation:
+        alias: weblabel_api.transformer.exception.validation
+
+    test.weblabel_api.transformer.exception.http:
+        alias: weblabel_api.transformer.exception.http
+
+    test.weblabel_api.transformer.exception.generic:
+        alias: weblabel_api.transformer.exception.generic
+
+    test.weblabel_api.exception_listener:
+        alias: weblabel_api.exception_listener
+
+    test.weblabel_api.security.authorization_checker:
+        alias: weblabel_api.security.authorization_checker
+
+    Weblabel\ApiBundle\Tests\Fixtures\Controller\DefaultController:
+        class: Weblabel\ApiBundle\Tests\Fixtures\Controller\DefaultController
