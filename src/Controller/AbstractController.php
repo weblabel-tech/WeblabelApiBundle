@@ -44,20 +44,15 @@ abstract class AbstractController
     {
         $form->submit($request->request->all());
         if (!$form->isValid()) {
-            $this->throwValidationException($form);
+            $errors = $this->formErrorNormalizer->normalize($form);
+
+            throw $this->createValidationException($errors);
         }
     }
 
-    /**
-     * Throws validation exception.
-     *
-     * @throws ValidationException
-     */
-    protected function throwValidationException(FormInterface $form): void
+    protected function createValidationException(array $errors, string $message = 'Validation error', \Throwable $previous = null): ValidationException
     {
-        $errors = $this->formErrorNormalizer->normalize($form);
-
-        throw new ValidationException($errors);
+        return new ValidationException($errors, $message, $previous);
     }
 
     /**
@@ -73,25 +68,22 @@ abstract class AbstractController
      * @param mixed $attributes
      * @param mixed $subject
      */
-    protected function denyAccessUnlessGranted($attributes, $subject = null, string $message = 'Access Denied.'): void
+    protected function allowAccess($attributes, $subject = null, string $message = 'Access Denied'): void
     {
         if (!$this->isGranted($attributes, $subject)) {
-            $this->throwAccessDeniedException($message, $attributes, $subject);
+            throw $this->createAccessDeniedException($message, $attributes, $subject);
         }
     }
 
     /**
-     * @param array|string $attributes
-     * @param mixed        $subject
-     *
-     * @throws AccessDeniedException
+     * @param mixed $subject
      */
-    protected function throwAccessDeniedException(string $message, $attributes, $subject): void
+    protected function createAccessDeniedException(string $message = 'Access Denied', array $attributes = [], $subject = null, \Throwable $previous = null): AccessDeniedException
     {
-        $exception = new AccessDeniedException($message);
+        $exception = new AccessDeniedException($message, $previous);
         $exception->setAttributes($attributes);
         $exception->setSubject($subject);
 
-        throw $exception;
+        return $exception;
     }
 }
