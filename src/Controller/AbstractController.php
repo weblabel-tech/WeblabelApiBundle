@@ -71,7 +71,7 @@ abstract class AbstractController
     protected function allowAccess($attributes, $subject = null, string $message = 'Access Denied'): void
     {
         if (!$this->isGranted($attributes, $subject)) {
-            throw $this->createAccessDeniedException($message, $attributes, $subject);
+            throw $this->createAccessDeniedException($message, (array) $attributes, $subject);
         }
     }
 
