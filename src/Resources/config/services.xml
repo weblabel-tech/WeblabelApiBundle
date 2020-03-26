@@ -5,7 +5,7 @@
 
     <services>
         <service id="weblabel_api.request_body_listener" class="Weblabel\ApiBundle\EventListener\RequestBodyListener">
-            <tag name="kernel.event_listener" event="kernel.request" method="onKernelRequest"/>
+            <tag name="kernel.event_listener" event="kernel.request" method="onKernelRequest" priority="250"/>
             <argument type="service" id="weblabel_data_transformer.decoder_resolver"/>
         </service>
 
