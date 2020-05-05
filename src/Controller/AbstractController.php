@@ -9,6 +9,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
+use Weblabel\ApiBundle\Exception\ConflictException;
 use Weblabel\ApiBundle\Exception\ValidationException;
 use Weblabel\ApiBundle\Normalizer\Form\FormErrorNormalizerInterface;
 use Weblabel\ApiBundle\Security\AuthorizationChecker;
@@ -53,6 +54,11 @@ abstract class AbstractController
     protected function createValidationException(array $errors, string $message = 'Validation error', \Throwable $previous = null): ValidationException
     {
         return new ValidationException($errors, $message, $previous);
+    }
+
+    protected function createConflictException(array $errors, string $message = 'Conflict', \Throwable $previous = null): ConflictException
+    {
+        return new ConflictException($errors, $message, $previous);
     }
 
     /**
