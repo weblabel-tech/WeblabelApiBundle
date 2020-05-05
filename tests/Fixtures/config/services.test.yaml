@@ -10,6 +10,9 @@ services:
     test.weblabel_api.transformer.exception.validation:
         alias: weblabel_api.transformer.exception.validation
 
+    test.weblabel_api.transformer.exception.conflict:
+        alias: weblabel_api.transformer.exception.conflict
+
     test.weblabel_api.transformer.exception.http:
         alias: weblabel_api.transformer.exception.http
 

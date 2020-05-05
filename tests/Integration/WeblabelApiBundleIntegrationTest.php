@@ -9,6 +9,7 @@ use Weblabel\ApiBundle\EventListener\ExceptionListener;
 use Weblabel\ApiBundle\EventListener\RequestBodyListener;
 use Weblabel\ApiBundle\Normalizer\Form\FormErrorNormalizerInterface;
 use Weblabel\ApiBundle\Security\AuthorizationChecker;
+use Weblabel\ApiBundle\Transformer\ExceptionTransformer\ConflictExceptionTransformer;
 use Weblabel\ApiBundle\Transformer\ExceptionTransformer\GenericExceptionTransformer;
 use Weblabel\ApiBundle\Transformer\ExceptionTransformer\HttpExceptionTransformer;
 use Weblabel\ApiBundle\Transformer\ExceptionTransformer\ValidationExceptionTransformer;
@@ -28,6 +29,7 @@ class WeblabelApiBundleIntegrationTest extends KernelTestCase
 
         self::assertInstanceOf(ExceptionTransformerResolverInterface::class, $container->get('weblabel_api.transformer.exception_resolver'));
         self::assertInstanceOf(ValidationExceptionTransformer::class, $container->get('test.weblabel_api.transformer.exception.validation'));
+        self::assertInstanceOf(ConflictExceptionTransformer::class, $container->get('test.weblabel_api.transformer.exception.conflict'));
         self::assertInstanceOf(HttpExceptionTransformer::class, $container->get('test.weblabel_api.transformer.exception.http'));
         self::assertInstanceOf(GenericExceptionTransformer::class, $container->get('test.weblabel_api.transformer.exception.generic'));
 

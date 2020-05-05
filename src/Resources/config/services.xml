@@ -23,6 +23,10 @@
             <tag name="weblabel_api.transformer.exception"/>
         </service>
 
+        <service id="weblabel_api.transformer.exception.conflict" class="Weblabel\ApiBundle\Transformer\ExceptionTransformer\ConflictExceptionTransformer">
+            <tag name="weblabel_api.transformer.exception"/>
+        </service>
+
         <service id="weblabel_api.transformer.exception.http" class="Weblabel\ApiBundle\Transformer\ExceptionTransformer\HttpExceptionTransformer">
             <tag name="weblabel_api.transformer.exception"/>
         </service>
