@@ -8,6 +8,7 @@ use Symfony\Component\Form\FormError;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintViolation;
+use Weblabel\ApiBundle\Validator\ParametersAwareInterface;
 
 final class FormErrorNormalizer implements FormErrorNormalizerInterface
 {
@@ -25,7 +26,8 @@ final class FormErrorNormalizer implements FormErrorNormalizerInterface
             $constraint = $cause->getConstraint();
             $errors[] = [
                 'message' => $error->getMessage(),
-                'code' => $constraint->payload['errorCode'],
+                'code' => $constraint->payload['errorCode'] ?? -1,
+                'parameters' => $this->getConstraintParameters($constraint),
             ];
         }
 
@@ -41,5 +43,14 @@ final class FormErrorNormalizer implements FormErrorNormalizerInterface
         }
 
         return $errors;
+    }
+
+    private function getConstraintParameters(Constraint $constraint): array
+    {
+        if ($constraint instanceof ParametersAwareInterface) {
+            return $constraint->getParameters();
+        }
+
+        return [];
     }
 }

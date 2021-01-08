@@ -68,6 +68,7 @@ class FormErrorNormalizerTest extends TestCase
                     [
                         'message' => 'Invalid email',
                         'code' => 1,
+                        'parameters' => [],
                     ],
                 ],
                 'details' => [
@@ -75,6 +76,7 @@ class FormErrorNormalizerTest extends TestCase
                         [
                             'message' => 'Invalid first name',
                             'code' => 2,
+                            'parameters' => [],
                         ],
                     ],
                 ],
