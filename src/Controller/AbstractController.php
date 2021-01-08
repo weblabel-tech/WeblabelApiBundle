@@ -43,7 +43,7 @@ abstract class AbstractController
      */
     protected function handleForm(Request $request, FormInterface $form): void
     {
-        $form->submit($request->request->all());
+        $form->submit(\array_merge($request->files->all(), $request->request->all()));
         if (!$form->isValid()) {
             $errors = $this->formErrorNormalizer->normalize($form);
 
