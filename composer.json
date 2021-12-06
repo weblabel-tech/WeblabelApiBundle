@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        "php": "^7.4",
+        "php": ">=7.4",
         "symfony/framework-bundle": "^5.0",
         "symfony/security-bundle": "^5.0",
         "symfony/yaml": "^5.0",
