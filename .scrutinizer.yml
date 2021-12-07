@@ -3,7 +3,7 @@ build:
         tests:
             environment:
                 php:
-                    version: 8.1
+                    version: 8.1.0
     tests:
         override:
             - php-scrutinizer-run
