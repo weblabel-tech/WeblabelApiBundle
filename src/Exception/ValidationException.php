@@ -8,7 +8,6 @@ use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 class ValidationException extends BadRequestHttpException
 {
-    /** @var array */
     private array $errors;
 
     public function __construct(array $errors, string $message = 'Validation error', \Throwable $previous = null, int $code = 0, array $headers = [])

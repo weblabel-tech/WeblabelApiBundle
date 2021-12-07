@@ -14,14 +14,12 @@ use Weblabel\DataTransformer\Exception\UnsupportedFormatException;
 
 final class RequestBodyListener
 {
-    /** @var array */
     private static array $methodsWithoutPayload = [
         'GET',
         'HEAD',
         'OPTIONS',
     ];
 
-    /** @var DecoderResolverInterface */
     private DecoderResolverInterface $decoderResolver;
 
     public function __construct(DecoderResolverInterface $decoderResolver)

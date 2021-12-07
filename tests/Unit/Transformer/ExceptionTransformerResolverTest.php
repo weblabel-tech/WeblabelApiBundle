@@ -12,7 +12,7 @@ use Weblabel\ApiBundle\Transformer\ExceptionTransformerResolver;
 
 class ExceptionTransformerResolverTest extends TestCase
 {
-    public function test_transformer_resolving_for_unsupported_exception()
+    public function testTransformerResolvingForUnsupportedException()
     {
         $this->expectException(LogicException::class);
 
@@ -20,7 +20,7 @@ class ExceptionTransformerResolverTest extends TestCase
         $resolver->resolve(new \Exception());
     }
 
-    public function test_transformer_resolving()
+    public function testTransformerResolving()
     {
         $exception = new Exception();
         $validationExceptionTransformer = $this->createMock(ExceptionTransformerInterface::class);

@@ -9,14 +9,14 @@ use Weblabel\ApiBundle\Transformer\ExceptionTransformer\GenericExceptionTransfor
 
 class GenericExceptionTransformerTest extends TestCase
 {
-    public function test_that_transformer_supports_all_exceptions()
+    public function testThatTransformerSupportsAllExceptions()
     {
         $transformer = new GenericExceptionTransformer(false);
 
         self::assertTrue($transformer->supports(new \Exception('foo')));
     }
 
-    public function test_exception_transforming_with_disabled_debug()
+    public function testExceptionTransformingWithDisabledDebug()
     {
         $transformer = new GenericExceptionTransformer(false);
 
@@ -30,7 +30,7 @@ class GenericExceptionTransformerTest extends TestCase
         );
     }
 
-    public function test_exception_transforming_with_enabled_debug()
+    public function testExceptionTransformingWithEnabledDebug()
     {
         $transformer = new GenericExceptionTransformer(true);
         $transformedResponse = $transformer->transform(new \Exception('foo'))->toArray();
@@ -54,7 +54,7 @@ class GenericExceptionTransformerTest extends TestCase
         self::assertIsArray($transformedResponse['details']['trace']);
     }
 
-    public function test_exception_transforming_for_empty_exception_message()
+    public function testExceptionTransformingForEmptyExceptionMessage()
     {
         $transformer = new GenericExceptionTransformer(true);
         $transformedResponse = $transformer->transform(new \Exception())->toArray();

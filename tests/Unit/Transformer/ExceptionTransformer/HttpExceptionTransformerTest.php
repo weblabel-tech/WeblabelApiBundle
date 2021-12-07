@@ -28,12 +28,12 @@ class HttpExceptionTransformerTest extends TestCase
 {
     private $transformer;
 
-    public function test_that_transformer_supports_http_exceptions()
+    public function testThatTransformerSupportsHttpExceptions()
     {
         self::assertTrue($this->transformer->supports(new BadRequestHttpException()));
     }
 
-    public function test_that_transformer_doesnt_support_non_http_exceptions()
+    public function testThatTransformerDoesntSupportNonHttpExceptions()
     {
         self::assertFalse($this->transformer->supports(new Exception()));
     }
@@ -41,7 +41,7 @@ class HttpExceptionTransformerTest extends TestCase
     /**
      * @dataProvider httpExceptionProvider
      */
-    public function test_exception_transforming(HttpExceptionInterface $exception)
+    public function testExceptionTransforming(HttpExceptionInterface $exception)
     {
         self::assertSame(
             [

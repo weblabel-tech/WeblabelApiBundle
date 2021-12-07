@@ -11,7 +11,6 @@ final class GenericExceptionTransformer implements ExceptionTransformerInterface
 {
     private const DEFAULT_STATUS_CODE = 500;
 
-    /** @var bool */
     private bool $debug;
 
     public function __construct(bool $debug)

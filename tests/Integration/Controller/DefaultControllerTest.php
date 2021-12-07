@@ -11,7 +11,7 @@ use Weblabel\ApiBundle\Tests\Fixtures\Controller\DefaultController;
 
 final class DefaultControllerTest extends KernelTestCase
 {
-    public function test_controller_services()
+    public function testControllerServices()
     {
         $kernel = self::bootKernel();
 

@@ -11,17 +11,18 @@
     ],
     "require": {
         "php": ">=7.4",
-        "symfony/framework-bundle": "^5.0",
-        "symfony/security-bundle": "^5.0",
-        "symfony/yaml": "^5.0",
-        "symfony/form": "^5.0",
-        "symfony/validator": "^5.0",
+        "symfony/framework-bundle": "^5.4",
+        "symfony/security-bundle": "^5.4",
+        "symfony/yaml": "^5.4",
+        "symfony/form": "^5.4",
+        "symfony/validator": "^5.4",
         "weblabel/data-transformer-bundle": "^1.0"
     },
     "require-dev": {
-        "symfony/phpunit-bridge": "^5.0",
-        "phpstan/phpstan": "^0.12.3",
-        "phpstan/phpstan-symfony": "^0.12.2"
+        "symfony/phpunit-bridge": "^5.4",
+        "phpstan/phpstan": "^0.12.99",
+        "phpstan/phpstan-symfony": "^0.12.44",
+        "friendsofphp/php-cs-fixer": "^3.3"
     },
     "autoload": {
         "psr-4": {

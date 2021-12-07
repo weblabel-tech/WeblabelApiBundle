@@ -21,7 +21,7 @@ class RequestBodyListenerTest extends TestCase
     /**
      * @dataProvider payloadLessMethodProvider
      */
-    public function test_decoding_for_payloadless_method(string $method)
+    public function testDecodingForPayloadlessMethod(string $method)
     {
         $decoderResolver = $this->createMock(DecoderResolverInterface::class);
         $decoderResolver
@@ -36,7 +36,7 @@ class RequestBodyListenerTest extends TestCase
     /**
      * @dataProvider emptyPayloadProvider
      */
-    public function test_decoding_with_empty_payload($payload)
+    public function testDecodingWithEmptyPayload($payload)
     {
         $decoderResolver = $this->createMock(DecoderResolverInterface::class);
         $decoderResolver
@@ -51,7 +51,7 @@ class RequestBodyListenerTest extends TestCase
     /**
      * @dataProvider payloadAwareMethodProvider
      */
-    public function test_decoding_payload(string $method)
+    public function testDecodingPayload(string $method)
     {
         $jsonDecoder = $this->createMock(DecoderInterface::class);
         $jsonDecoder
@@ -74,7 +74,7 @@ class RequestBodyListenerTest extends TestCase
         self::assertSame(['foo' => 'bar'], $request->request->all());
     }
 
-    public function test_decoding_with_invalid_payload()
+    public function testDecodingWithInvalidPayload()
     {
         $this->expectException(BadRequestHttpException::class);
         $jsonDecoder = $this->createMock(DecoderInterface::class);
@@ -96,7 +96,7 @@ class RequestBodyListenerTest extends TestCase
         $requestBodyListener->onKernelRequest($requestEvent);
     }
 
-    public function test_decoding_for_unsupported_format()
+    public function testDecodingForUnsupportedFormat()
     {
         $this->expectException(UnsupportedMediaTypeHttpException::class);
         $decoderResolver = $this->createMock(DecoderResolverInterface::class);
@@ -139,7 +139,7 @@ class RequestBodyListenerTest extends TestCase
         ];
     }
 
-    private function getRequest(string $method, ?string $content = null, string $contentType = 'application/json'): Request
+    private function getRequest(string $method, string $content = null, string $contentType = 'application/json'): Request
     {
         return Request::create('https://example.com', $method, [], [], [], ['CONTENT_TYPE' => $contentType], $content);
     }

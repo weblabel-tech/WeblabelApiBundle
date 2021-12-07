@@ -15,7 +15,7 @@ use Weblabel\ApiBundle\Transformer\ExceptionWrapper;
 
 class ExceptionListenerTest extends TestCase
 {
-    public function test_exception_handling()
+    public function testExceptionHandling()
     {
         $exception = new \Exception();
         $transformer = $this->createMock(ExceptionTransformerInterface::class);

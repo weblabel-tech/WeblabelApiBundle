@@ -17,7 +17,7 @@ use Weblabel\ApiBundle\Transformer\ExceptionTransformerResolverInterface;
 
 class WeblabelApiBundleIntegrationTest extends KernelTestCase
 {
-    public function test_service_configuration()
+    public function testServiceConfiguration()
     {
         $kernel = self::bootKernel();
 

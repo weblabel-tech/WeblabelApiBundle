@@ -16,7 +16,7 @@ use Weblabel\ApiBundle\Normalizer\Form\FormErrorNormalizer;
 
 class FormErrorNormalizerTest extends TestCase
 {
-    public function test_error_normalizing()
+    public function testErrorNormalizing()
     {
         $formFactory = Forms::createFormFactoryBuilder()
             ->addExtension(new ValidatorExtension(Validation::createValidator()))

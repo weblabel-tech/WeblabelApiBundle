@@ -32,7 +32,7 @@ final class ExceptionTransformerResolver implements ExceptionTransformerResolver
             }
         }
 
-        throw new LogicException(\sprintf('Cannot find transformer for given exception "%s"', \get_class($throwable)));
+        throw new LogicException(sprintf('Cannot find transformer for given exception "%s"', \get_class($throwable)));
     }
 
     /**

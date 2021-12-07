@@ -13,17 +13,17 @@ class ConflictExceptionTransformerTest extends TestCase
 {
     private $transformer;
 
-    public function test_that_transformer_supports_conflict_exception()
+    public function testThatTransformerSupportsConflictException()
     {
         self::assertTrue($this->transformer->supports(new ConflictException([])));
     }
 
-    public function test_that_transformer_doesnt_support_non_conflict_exceptions()
+    public function testThatTransformerDoesntSupportNonConflictExceptions()
     {
         self::assertFalse($this->transformer->supports(new Exception()));
     }
 
-    public function test_exception_transforming()
+    public function testExceptionTransforming()
     {
         $exception = new ConflictException(['foo' => 'bar']);
 

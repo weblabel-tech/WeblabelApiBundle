@@ -13,17 +13,17 @@ class ValidationExceptionTransformerTest extends TestCase
 {
     private $transformer;
 
-    public function test_that_transformer_supports_validation_exception()
+    public function testThatTransformerSupportsValidationException()
     {
         self::assertTrue($this->transformer->supports(new ValidationException([])));
     }
 
-    public function test_that_transformer_doesnt_support_non_validation_exceptions()
+    public function testThatTransformerDoesntSupportNonValidationExceptions()
     {
         self::assertFalse($this->transformer->supports(new Exception()));
     }
 
-    public function test_exception_transforming()
+    public function testExceptionTransforming()
     {
         $exception = new ValidationException(['foo' => 'bar']);
 

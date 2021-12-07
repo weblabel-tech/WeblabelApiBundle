@@ -11,7 +11,7 @@ use Weblabel\ApiBundle\DependencyInjection\Compiler\ControllerServicesCompilerPa
 
 class ControllerServicesCompilerPassTest extends TestCase
 {
-    public function test_controller_services_autoconfiguration()
+    public function testControllerServicesAutoconfiguration()
     {
         $containerBuilder = new ContainerBuilder();
         $testControllerDefinition = $containerBuilder->register('test_controller');

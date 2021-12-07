@@ -10,16 +10,12 @@ final class ExceptionWrapper
 
     public const DEFAULT_TYPE = 'about:blank';
 
-    /** @var int */
     private int $statusCode;
 
-    /** @var string */
     private string $title;
 
-    /** @var string */
     private string $type;
 
-    /** @var array */
     private array $attributes;
 
     public function __construct(int $status, string $title = self::DEFAULT_MESSAGE, string $type = self::DEFAULT_TYPE, array $attributes = [])
@@ -35,7 +31,7 @@ final class ExceptionWrapper
      */
     public function toArray(): array
     {
-        return \array_merge(
+        return array_merge(
             [
                 'status' => $this->statusCode,
                 'title' => $this->title,

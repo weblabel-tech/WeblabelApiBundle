@@ -8,7 +8,6 @@ use Symfony\Component\HttpKernel\Exception\ConflictHttpException;
 
 class ConflictException extends ConflictHttpException
 {
-    /** @var array */
     private array $errors;
 
     public function __construct(array $errors, string $message = 'Conflict', \Throwable $previous = null, int $code = 0, array $headers = [])
