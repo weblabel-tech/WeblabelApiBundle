@@ -13,9 +13,9 @@ final class DefaultControllerTest extends KernelTestCase
 {
     public function testControllerServices()
     {
-        $kernel = self::bootKernel();
+        self::bootKernel();
 
-        $container = $kernel->getContainer();
+        $container = static::getContainer();
         /** @var DefaultController $controller */
         $controller = $container->get('Weblabel\ApiBundle\Tests\Fixtures\Controller\DefaultController');
 

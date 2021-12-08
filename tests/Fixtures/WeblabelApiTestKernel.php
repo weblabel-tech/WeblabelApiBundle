@@ -7,6 +7,7 @@ namespace Weblabel\ApiBundle\Tests\Fixtures;
 use Symfony\Bundle\FrameworkBundle\FrameworkBundle;
 use Symfony\Bundle\SecurityBundle\SecurityBundle;
 use Symfony\Component\Config\Loader\LoaderInterface;
+use Symfony\Component\HttpKernel\Bundle\BundleInterface;
 use Symfony\Component\HttpKernel\Kernel;
 use Weblabel\ApiBundle\WeblabelApiBundle;
 use Weblabel\DataTransformerBundle\WeblabelDataTransformerBundle;
@@ -18,6 +19,9 @@ class WeblabelApiTestKernel extends Kernel
         parent::__construct('test', true);
     }
 
+    /**
+     * @return iterable<mixed, BundleInterface>
+     */
     public function registerBundles()
     {
         return [

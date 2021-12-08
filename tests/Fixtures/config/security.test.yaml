@@ -1,6 +1,7 @@
 security:
+    enable_authenticator_manager: true
     providers:
         in_memory: { memory: null }
     firewalls:
         main:
-            anonymous: lazy
+            lazy: true

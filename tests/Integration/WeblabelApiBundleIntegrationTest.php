@@ -19,22 +19,22 @@ class WeblabelApiBundleIntegrationTest extends KernelTestCase
 {
     public function testServiceConfiguration()
     {
-        $kernel = self::bootKernel();
+        self::bootKernel();
 
-        $container = $kernel->getContainer();
+        $container = static::getContainer();
 
-        self::assertInstanceOf(RequestBodyListener::class, $container->get('test.weblabel_api.request_body_listener'));
+        self::assertInstanceOf(RequestBodyListener::class, $container->get('weblabel_api.request_body_listener'));
 
         self::assertInstanceOf(FormErrorNormalizerInterface::class, $container->get('weblabel_api.normalizer.form.error'));
 
         self::assertInstanceOf(ExceptionTransformerResolverInterface::class, $container->get('weblabel_api.transformer.exception_resolver'));
-        self::assertInstanceOf(ValidationExceptionTransformer::class, $container->get('test.weblabel_api.transformer.exception.validation'));
-        self::assertInstanceOf(ConflictExceptionTransformer::class, $container->get('test.weblabel_api.transformer.exception.conflict'));
-        self::assertInstanceOf(HttpExceptionTransformer::class, $container->get('test.weblabel_api.transformer.exception.http'));
-        self::assertInstanceOf(GenericExceptionTransformer::class, $container->get('test.weblabel_api.transformer.exception.generic'));
+        self::assertInstanceOf(ValidationExceptionTransformer::class, $container->get('weblabel_api.transformer.exception.validation'));
+        self::assertInstanceOf(ConflictExceptionTransformer::class, $container->get('weblabel_api.transformer.exception.conflict'));
+        self::assertInstanceOf(HttpExceptionTransformer::class, $container->get('weblabel_api.transformer.exception.http'));
+        self::assertInstanceOf(GenericExceptionTransformer::class, $container->get('weblabel_api.transformer.exception.generic'));
 
-        self::assertInstanceOf(ExceptionListener::class, $container->get('test.weblabel_api.exception_listener'));
+        self::assertInstanceOf(ExceptionListener::class, $container->get('weblabel_api.exception_listener'));
 
-        self::assertInstanceOf(AuthorizationChecker::class, $container->get('test.weblabel_api.security.authorization_checker'));
+        self::assertInstanceOf(AuthorizationChecker::class, $container->get('weblabel_api.security.authorization_checker'));
     }
 }
